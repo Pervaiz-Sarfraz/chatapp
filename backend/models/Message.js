@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const MessageSchema = new mongoose.Schema({
   user: { type: String, required: true },
@@ -6,4 +6,5 @@ const MessageSchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("Message", MessageSchema);
+const Message = mongoose.model("Message", MessageSchema);
+export default Message;
